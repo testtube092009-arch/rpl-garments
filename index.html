@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RPL Garments</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: #fff;
+  color: #111;
+}
+
+/* NAVBAR */
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+}
+
+nav a {
+  color: white;
+  padding: 15px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover { color: #aaa; }
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: url('https://drive.google.com/uc?export=view&id=1A5eu6JqPnDQt3i0b-NllfBNfHWgmY5bK') center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 60px;
+  animation: fadeDown 1s ease;
+}
+
+.hero p {
+  font-size: 20px;
+  animation: fadeUp 1s ease;
+}
+
+@keyframes fadeDown {
+  from {opacity:0; transform:translateY(-50px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeUp {
+  from {opacity:0; transform:translateY(50px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+/* SECTION */
+section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background: #f5f5f5;
+  padding: 30px;
+  border-radius: 15px;
+  width: 200px;
+  transition: 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+  background: black;
+  color: white;
+}
+
+/* SLIDER */
+.slider {
+  max-width: 600px;
+  margin: auto;
+}
+
+.slide { display: none; }
+
+.slide img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* CONTACT */
+iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  margin-top: 20px;
+}
+
+/* FOOTER */
+footer {
+  background: black;
+  color: white;
+  padding: 20px;
+}
+
+/* WHATSAPP */
+.whatsapp-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.whatsapp-button {
+  background: #25D366;
+  color: white;
+  font-size: 24px;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.whatsapp-options {
+  display: none;
+  flex-direction: column;
+}
+
+.whatsapp-options a {
+  background: white;
+  padding: 10px;
+  margin: 5px;
+  text-decoration: none;
+  color: black;
+  border-radius: 5px;
+}
+
+/* MOBILE */
+@media(max-width:768px) {
+  .hero h1 { font-size: 35px; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#products">Products</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<div class="hero">
+  <div>
+    <h1>RPL Garments</h1>
+    <p>Premium Clothing Store</p>
+  </div>
+</div>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p>RPL Garments is a partnership firm run by Rahul, Panna, and Liton located in Jirighat Bazar, Cachar, Assam - 788104.</p>
+</section>
+
+<section id="products">
+  <h2>Our Products</h2>
+  <div class="cards">
+    <div class="card">Men's Wear</div>
+    <div class="card">Women's Wear</div>
+    <div class="card">Kids Wear</div>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2>Gallery</h2>
+  <div class="slider">
+    <div class="slide"><img src="https://drive.google.com/uc?export=view&id=1A5eu6JqPnDQt3i0b-NllfBNfHWgmY5bK"></div>
+    <div class="slide"><img src="https://drive.google.com/uc?export=view&id=1A5eu6JqPnDQt3i0b-NllfBNfHWgmY5bK"></div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>?? Jirighat Bazar, Cachar, Assam - 788104</p>
+  <iframe src="https://maps.google.com/maps?q=Cachar Assam&output=embed"></iframe>
+</section>
+
+<footer>
+  <p>© 2026 RPL Garments</p>
+</footer>
+
+<!-- WhatsApp -->
+<div class="whatsapp-container">
+  <div class="whatsapp-button" onclick="toggleWA()">??</div>
+  <div class="whatsapp-options" id="waBox">
+    <a href="https://wa.me/919435430411" target="_blank">Chat on WhatsApp (9435430411)</a>
+    <a href="https://wa.me/919435070612" target="_blank">Chat on WhatsApp (9435070612)</a>
+  </div>
+</div>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let slides = document.getElementsByClassName("slide");
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) { slideIndex = 1 }
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 2500);
+}
+
+function toggleWA() {
+  let box = document.getElementById("waBox");
+  box.style.display = (box.style.display === "flex") ? "none" : "flex";
+}
+</script>
+
+</body>
+</html>
